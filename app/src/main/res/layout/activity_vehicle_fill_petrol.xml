@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".ActivityVehicleFillPetrol">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.kepss.expenseentry.viewModel.ViewModelFillPetrol" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/_5sdp"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Last KM"
+                android:textColor="@color/colorAccent"
+                android:textSize="@dimen/_10sdp" />
+
+            <EditText
+                style="@style/Widget.AppCompat.EditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:enabled="false"
+                android:hint="00"
+                android:text="@={viewModel.strLastKm}"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="@dimen/_15sdp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/_5sdp"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Currant KM"
+                android:textColor="@color/colorAccent"
+                android:textSize="@dimen/_10sdp" />
+
+            <EditText
+                style="@style/Widget.AppCompat.EditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="0"
+                android:imeOptions="actionNext"
+                android:inputType="number"
+                android:text="@={viewModel.strCurrantKm}"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="@dimen/_15sdp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/_5sdp"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Currant Petrol/Diesel Rate :"
+                android:textColor="@color/colorAccent"
+                android:textSize="@dimen/_10sdp" />
+
+            <EditText
+                style="@style/Widget.AppCompat.EditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="0"
+                android:imeOptions="actionNext"
+                android:inputType="number"
+                android:text="@={viewModel.strCurrantRate}"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="@dimen/_15sdp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/_5sdp"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Fill Amount"
+                android:textColor="@color/colorAccent"
+                android:textSize="@dimen/_10sdp" />
+
+            <EditText
+                style="@style/Widget.AppCompat.EditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="0"
+                android:imeOptions="actionDone"
+                android:inputType="number"
+                android:text="@={viewModel.strCurrantFillAmount}"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="@dimen/_15sdp" />
+
+        </LinearLayout>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_gravity="end"
+            android:layout_margin="@dimen/_5sdp"
+
+            android:layout_height="wrap_content"
+            android:text="Save" />
+
+    </LinearLayout>
+
+</layout>

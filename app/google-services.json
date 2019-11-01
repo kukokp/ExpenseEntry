@@ -1,0 +1,93 @@
+{
+  "project_info": {
+    "project_number": "946833807128",
+    "firebase_url": "https://expenseentry-fa645.firebaseio.com",
+    "project_id": "expenseentry-fa645",
+    "storage_bucket": "expenseentry-fa645.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:946833807128:android:6ad22a0f67e094f248306d",
+        "android_client_info": {
+          "package_name": "com.example.expenseentry"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "946833807128-jh8c14ko3gpen6800icjpqsv79el82b2.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.expenseentry",
+            "certificate_hash": "4dca6f667a91a0b193f16ac38074537bc92370c6"
+          }
+        },
+        {
+          "client_id": "946833807128-c3hv93m75mn0tdlhm66thmn7hohkel76.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.expenseentry",
+            "certificate_hash": "bc69d84d5cfc0752c8399d870e80deb644fb97b4"
+          }
+        },
+        {
+          "client_id": "946833807128-k4kun07t6d7ngceph3jhleqmpsir38uk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBXo4SXYYbTeipuRddBT2pHZL4vmRUHyKQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "946833807128-k4kun07t6d7ngceph3jhleqmpsir38uk.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:946833807128:android:5da8e075aef7673848306d",
+        "android_client_info": {
+          "package_name": "com.kepss.expenseentry"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "946833807128-4ugska6d5s7m361547nef1p93blm2kr4.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.kepss.expenseentry",
+            "certificate_hash": "4dca6f667a91a0b193f16ac38074537bc92370c6"
+          }
+        },
+        {
+          "client_id": "946833807128-k4kun07t6d7ngceph3jhleqmpsir38uk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBXo4SXYYbTeipuRddBT2pHZL4vmRUHyKQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "946833807128-k4kun07t6d7ngceph3jhleqmpsir38uk.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

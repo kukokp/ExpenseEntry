@@ -1,0 +1,352 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorLightGrey"
+        android:orientation="vertical">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_weight="1"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="vertical"
+                android:layout_height="wrap_content">
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/_5sdp"
+                    app:cardUseCompatPadding="true">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+                        <!--                mySwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {-->
+                        <!--                public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {-->
+                        <!--                // do something, the isChecked will be-->
+                        <!--                // true if the switch is in the On position-->
+                        <!--                }-->
+                        <!--                });-->
+                        <Switch
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_10sdp"
+                            android:padding="@dimen/_5sdp"
+                            android:setOnCheckedChangeListener="@{(buttonView, isChecked)->viewModel.changeListener(buttonView, isChecked)}"
+                            android:text="In-Come  "
+                            tools:ignore="HardcodedText" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="@dimen/_5sdp"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="@{viewModel.strExpNameLabel}"
+                                android:textColor="@color/colorAccent"
+                                android:textSize="@dimen/_10sdp" />
+
+                            <androidx.appcompat.widget.AppCompatAutoCompleteTextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:hint="Name"
+                                android:imeOptions="actionDone"
+                                android:inputType="text"
+                                android:setOnItemClickListener="@{(parent,view,position,id)->viewModel.autoCompleteClick(parent,view,position,id)}"
+                                android:text="@={viewModel.strExpName}"
+                                android:textSize="@dimen/_15sdp"
+                                app:alItem="@{viewModel.alItem}"
+                                app:atvAdapter="@{viewModel.adapterAutoCompleteTextView}"
+                                tools:ignore="HardcodedText" />
+                        </LinearLayout>
+
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="@dimen/_5sdp"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="@{viewModel.strExpAmtLabel}"
+                                android:textColor="@color/colorAccent"
+                                android:textSize="@dimen/_10sdp" />
+
+                            <EditText
+                                style="@style/Widget.AppCompat.EditText"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:hint="Expense Amount"
+                                android:imeOptions="actionDone"
+                                android:inputType="number"
+                                android:text="@={viewModel.strExpAmt}"
+                                android:textColor="@color/colorPrimaryDark"
+                                android:textSize="@dimen/_15sdp"
+                                app:isFocus="@{viewModel.isAmountFocus}" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="@dimen/_5sdp"
+                                android:text="Date Time"
+                                android:textColor="@color/colorPrimaryDark" />
+
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="@dimen/_5sdp"
+                                android:onClick="@{()-> viewModel.dateSelect()}"
+                                android:text="@{viewModel.strDateTime}"
+                                android:textColor="@color/colorPrimaryDark" />
+
+                        </LinearLayout>
+
+
+                        <Button
+                            style="@style/TextAppearance.AppCompat.Button"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="bottom"
+                            android:layout_margin="@dimen/_5sdp"
+                            android:onClick="@{()-> viewModel.ExpenseEntry()}"
+                            android:text="Add" />
+
+
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/_5sdp"
+                    app:cardUseCompatPadding="true">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:onClick="@{()-> viewModel.loadReport()}"
+                            android:orientation="vertical">
+
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_margin="@dimen/_5sdp"
+                                    android:text="Summary"
+                                    android:textColor="@color/colorPrimaryDark"
+                                    android:textSize="@dimen/_15sdp"
+                                    android:textStyle="bold" />
+
+                                <View
+                                    android:layout_width="match_parent"
+                                    android:layout_height="@dimen/_2sdp"
+                                    android:background="@color/colorLightGrey" />
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal">
+
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:layout_margin="@dimen/_5sdp"
+                                        android:layout_weight="1"
+                                        android:gravity="center"
+                                        android:text=""
+                                        android:textColor="@color/colorBlack"
+                                        android:textSize="@dimen/_12sdp"
+                                        android:textStyle="bold" />
+
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:layout_margin="@dimen/_5sdp"
+                                        android:layout_weight="1"
+                                        android:gravity="center"
+                                        android:text="In"
+                                        android:textColor="@color/colorPrimary"
+                                        android:textSize="@dimen/_12sdp"
+                                        android:textStyle="bold" />
+
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:layout_margin="@dimen/_5sdp"
+                                        android:layout_weight="1"
+                                        android:gravity="center"
+                                        android:text="Out"
+                                        android:textColor="@color/colorPrimary"
+                                        android:textSize="@dimen/_12sdp"
+                                        android:textStyle="bold" />
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal">
+
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:layout_margin="@dimen/_5sdp"
+                                        android:layout_weight="1"
+                                        android:gravity="center"
+                                        android:text="Today"
+                                        android:textColor="@color/colorBlack"
+                                        android:textSize="@dimen/_12sdp"
+                                        android:textStyle="bold" />
+
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:layout_margin="@dimen/_5sdp"
+                                        android:layout_weight="1"
+                                        android:gravity="center"
+                                        android:text="@{viewModel.strTodayIn}"
+                                        android:textColor="@color/colorBlack"
+                                        android:textSize="@dimen/_12sdp"
+                                        android:textStyle="bold" />
+
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:layout_margin="@dimen/_5sdp"
+                                        android:layout_weight="1"
+                                        android:gravity="center"
+                                        android:text="@{viewModel.strTodayOut}"
+                                        android:textColor="@color/colorBlack"
+                                        android:textSize="@dimen/_12sdp"
+                                        android:textStyle="bold" />
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal">
+
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:layout_margin="@dimen/_5sdp"
+                                        android:layout_weight="1"
+                                        android:gravity="center"
+                                        android:text="Yesterday"
+                                        android:textColor="@color/colorBlack"
+                                        android:textSize="@dimen/_12sdp"
+                                        android:textStyle="bold" />
+
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:layout_margin="@dimen/_5sdp"
+                                        android:layout_weight="1"
+                                        android:gravity="center"
+                                        android:text="@{viewModel.strTomorrowIn}"
+                                        android:textColor="@color/colorBlack"
+                                        android:textSize="@dimen/_12sdp"
+                                        android:textStyle="bold" />
+
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:layout_margin="@dimen/_5sdp"
+                                        android:layout_weight="1"
+                                        android:gravity="center"
+                                        android:text="@{viewModel.strTomorrowOut}"
+                                        android:textColor="@color/colorBlack"
+                                        android:textSize="@dimen/_12sdp"
+                                        android:textStyle="bold" />
+                                </LinearLayout>
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/_5sdp"
+                    android:visibility="gone"
+                    android:onClick="@{()-> viewModel.vehicleClick()}"
+                    app:cardUseCompatPadding="true">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="@dimen/_5sdp"
+                            android:text="Vehicle Info"
+                            android:textColor="@color/colorPrimaryDark"
+                            android:textSize="@dimen/_15sdp"
+                            android:textStyle="bold" />
+
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+            </LinearLayout>
+        </ScrollView>
+
+        <com.google.android.gms.ads.AdView xmlns:ads="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/adView"
+            android:layout_gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_alignParentBottom="true"
+            ads:adSize="BANNER"
+            android:layout_marginBottom="@dimen/_10sdp"
+            ads:adUnitId="ca-app-pub-8620265603910499/9818644533"></com.google.android.gms.ads.AdView>
+    </LinearLayout>
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.kepss.expenseentry.viewModel.ViewModelActivityMain" />
+    </data>
+
+
+</layout>
