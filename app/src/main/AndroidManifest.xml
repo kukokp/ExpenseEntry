@@ -10,7 +10,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity"/>
+        <activity
+            android:name=".ActivityScrolling"
+            android:label="Krunal"
+            android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:name=".ActivitySwip_RecycleView" />
+        <activity android:name=".MainActivity" />
         <activity android:name=".TestActivity" />
         <activity android:name=".LoginActivity" />
 
@@ -21,10 +26,10 @@
         <activity android:name=".ActivityVehicleFillPetrol" />
         <activity android:name=".ActivityVehicleList" />
         <activity android:name=".ActivityExpenseReport" />
-        <activity android:name=".ActivitySwip_RecycleView">
+        <activity android:name=".ActivityDrawer">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-                <action android:name="android.intent.action.VIEW" />
+                <action  android:name="android.intent.action.VIEW" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
